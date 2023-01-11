@@ -22,6 +22,13 @@ namespace VidlyCSharp.Controllers
             _context.Dispose();
         }
 
+        public ActionResult New()
+        {
+           
+            return View();
+           
+        }
+
         // GET: Customer
         public ViewResult Index()
         {
@@ -37,6 +44,10 @@ namespace VidlyCSharp.Controllers
             return View(customer);
         }
 
-       
+
+        public ActionResult Create()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
