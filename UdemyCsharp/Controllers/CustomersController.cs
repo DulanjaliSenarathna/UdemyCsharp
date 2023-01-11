@@ -39,7 +39,10 @@ namespace VidlyCSharp.Controllers
         [HttpPost]
         public ActionResult Create(Customer customer)
         {
-            return View();
+            //add customer to db
+            _context.Customers.Add(customer);//only save in memory
+            _context.SaveChanges();
+            return RedirectToAction("Index", "Customer");//redirect to list of customer
         }
 
         // GET: Customer
