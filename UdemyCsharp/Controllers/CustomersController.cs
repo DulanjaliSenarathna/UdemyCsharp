@@ -27,12 +27,12 @@ namespace VidlyCSharp.Controllers
         {
             //get membership types from db
             var membershipTypes = _context.MembershipTypes.ToList();
-            var viewModel = new NewCustomerViewModel
+            var viewModel = new CustomerFormViewModel
             {
                 MembershipTypes = membershipTypes
             };
            
-            return View(viewModel);
+            return View("CustomerForm",viewModel);
            
         }
 
@@ -61,6 +61,20 @@ namespace VidlyCSharp.Controllers
         }
 
 
-       
+        public ActionResult Edit(int id)
+        {
+            //get customer from db by id
+            var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
+
+            if (customer == null)
+                return HttpNotFound();
+            //override mvc convention - we specify the view that we want to render in side the View(). otherwise by default this action return Edit view.
+            var viewModel = new CustomerFormViewModel
+            {
+                Customer = customer,
+                MembershipTypes = _context.MembershipTypes.ToList()
+            };
+            return View("CustomerForm", viewModel);
+        }
     }
 }
