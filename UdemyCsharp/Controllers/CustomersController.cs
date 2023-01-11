@@ -37,10 +37,26 @@ namespace VidlyCSharp.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Customer customer)
+        public ActionResult Save(Customer customer)
         {
-            //add customer to db
-            _context.Customers.Add(customer);//only save in memory
+            //if customer have not an id, add customer to db
+            if (customer.Id == 0)
+                _context.Customers.Add(customer);//only save in memory
+            //if customer already have an id, then update customer details
+            else
+            {
+                var customerInDb = _context.Customers.Single(c => c.Id == customer.Id);
+
+                //instead of TryUpdate(customerInDb) method (do not use this, because this provides security holes in app. this method defaultly update all the fields is form. but we can use 3rd argument , that is string array that contains fields that we should update. But it is hard to refactor this field names future. we should rename them one by one)
+
+                customerInDb.Name = customer.Name;
+                customerInDb.BirthDate = customer.BirthDate;
+                customerInDb.MembershipTypeId = customer.MembershipTypeId;
+                customerInDb.IsSubscribedToNewsLetter= customer.IsSubscribedToNewsLetter;
+
+                //intead of above 4 lines, we can use tool called AutoMapper to mapping object properties. 
+                //Mapper.Map(customer, customerInDb)
+            }
             _context.SaveChanges();
             return RedirectToAction("Index", "Customer");//redirect to list of customer
         }
