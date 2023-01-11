@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using UdemyCsharp.Models;
+using UdemyCsharp.ViewModels;
 
 namespace VidlyCSharp.Controllers
 {
@@ -24,8 +25,14 @@ namespace VidlyCSharp.Controllers
 
         public ActionResult New()
         {
+            //get membership types from db
+            var membershipTypes = _context.MembershipTypes.ToList();
+            var viewModel = new NewCustomerViewModel
+            {
+                MembershipTypes = membershipTypes
+            };
            
-            return View();
+            return View(viewModel);
            
         }
 
@@ -45,9 +52,6 @@ namespace VidlyCSharp.Controllers
         }
 
 
-        public ActionResult Create()
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }
