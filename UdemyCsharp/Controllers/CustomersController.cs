@@ -39,6 +39,16 @@ namespace VidlyCSharp.Controllers
         [HttpPost]
         public ActionResult Save(Customer customer)
         {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new CustomerFormViewModel
+                {
+                    Customer = customer,
+                    MembershipTypes = _context.MembershipTypes.ToList()
+                };
+
+                return View("CustomerForm", viewModel);
+            }
             //if customer have not an id, add customer to db
             if (customer.Id == 0)
                 _context.Customers.Add(customer);//only save in memory
