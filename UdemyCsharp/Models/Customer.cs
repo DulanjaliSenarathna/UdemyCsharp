@@ -19,6 +19,7 @@ namespace UdemyCsharp.Models
         public byte MembershipTypeId { get; set; } //implicitly required, because of byte data type
 
         [Display(Name = "Date of Birth")]
+        [Min18YearsIfAMember]
         public DateTime ? BirthDate { get; set; }
     }
 }
