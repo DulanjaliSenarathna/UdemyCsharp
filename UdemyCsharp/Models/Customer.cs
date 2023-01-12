@@ -16,7 +16,7 @@ namespace UdemyCsharp.Models
         public bool IsSubscribedToNewsLetter { get; set; }
         public MembershipType MembershipType { get; set; }//navigation properties customer to MembershipType
         [Display(Name = "Membership Type")]
-        public byte MembershipTypeId { get; set; }
+        public byte MembershipTypeId { get; set; } //implicitly required, because of byte data type
 
         [Display(Name = "Date of Birth")]
         public DateTime ? BirthDate { get; set; }
