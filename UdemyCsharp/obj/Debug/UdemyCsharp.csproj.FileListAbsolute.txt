@@ -366,3 +366,5 @@ C:\Users\Dulanjali\Desktop\UdemyCsharp\UdemyCsharp\bin\System.Web.Http.WebHost.d
 C:\Users\Dulanjali\Desktop\UdemyCsharp\UdemyCsharp\bin\System.Net.Http.Formatting.xml
 C:\Users\Dulanjali\Desktop\UdemyCsharp\UdemyCsharp\bin\System.Web.Http.xml
 C:\Users\Dulanjali\Desktop\UdemyCsharp\UdemyCsharp\bin\System.Web.Http.WebHost.xml
+C:\Users\Dulanjali\Desktop\UdemyCsharp\UdemyCsharp\bin\AutoMapper.dll
+C:\Users\Dulanjali\Desktop\UdemyCsharp\UdemyCsharp\bin\AutoMapper.xml
