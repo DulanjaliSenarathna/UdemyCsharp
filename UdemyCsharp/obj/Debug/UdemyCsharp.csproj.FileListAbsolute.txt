@@ -368,3 +368,4 @@ C:\Users\Dulanjali\Desktop\UdemyCsharp\UdemyCsharp\bin\System.Web.Http.xml
 C:\Users\Dulanjali\Desktop\UdemyCsharp\UdemyCsharp\bin\System.Web.Http.WebHost.xml
 C:\Users\Dulanjali\Desktop\UdemyCsharp\UdemyCsharp\bin\AutoMapper.dll
 C:\Users\Dulanjali\Desktop\UdemyCsharp\UdemyCsharp\bin\AutoMapper.xml
+C:\Users\Dulanjali\Desktop\UdemyCsharp\UdemyCsharp\obj\Debug\UdemyCsharp.Migrations.SeedUsers.resources
