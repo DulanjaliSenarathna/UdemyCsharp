@@ -74,6 +74,7 @@ namespace VidlyCSharp.Controllers
         }
 
         // GET: Customer
+       
         public ViewResult Index()
         {
             //var customers = _context.Customers.Include(c => c.MembershipType).ToList(); - remove because we fetching data through api
