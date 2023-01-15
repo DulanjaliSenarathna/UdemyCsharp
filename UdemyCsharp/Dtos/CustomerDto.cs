@@ -17,6 +17,8 @@ namespace UdemyCsharp.Dtos
         public bool IsSubscribedToNewsLetter { get; set; }
         public byte MembershipTypeId { get; set; } //implicitly required, because of byte data type
 
+        public MembershipTypeDto MembershipType { get; set; }
+
         //[Min18YearsIfAMember]
         public DateTime? BirthDate { get; set; }
     }
