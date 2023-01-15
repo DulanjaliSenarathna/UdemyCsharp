@@ -7,6 +7,7 @@ using System.Web.Http;
 using AutoMapper;
 using UdemyCsharp.Dtos;
 using UdemyCsharp.Models;
+using System.Data.Entity;
 
 namespace UdemyCsharp.Controllers.Api
 {
@@ -22,7 +23,7 @@ namespace UdemyCsharp.Controllers.Api
         //GET /api/movies
         public IEnumerable<MovieDto> GetCustomers()
         {
-            return _context.Movies.ToList().Select(Mapper.Map<Movie, MovieDto>);
+            return _context.Movies.Include(m=>m.Genre).ToList().Select(Mapper.Map<Movie, MovieDto>);
         }
 
         //GET /api/movies/1

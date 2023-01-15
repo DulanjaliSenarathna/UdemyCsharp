@@ -35,8 +35,8 @@ using UdemyCsharp.ViewModels;
 
         public ViewResult Index()
         {
-            var movies = _context.Movies.Include(m => m.Genre).ToList();
-            return View(movies);    
+            //var movies = _context.Movies.Include(m => m.Genre).ToList();
+            return View();    
         }
 
         public ActionResult Details(int id)
