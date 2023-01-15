@@ -33,7 +33,7 @@
 {
     <script>
         $(document).ready(function() {
-            $("#customers").DataTable({
+          var table =  $("#customers").DataTable({
                 ajax: {
                     url: "/api/customers",
                     dataSrc: ""
@@ -68,8 +68,9 @@
                                 $.ajax({
                                     url: "/api/customers/" + button.attr("data-customer-id"),
                                     method: "DELETE",
-                                    success: function() {
-                                        button.parents("tr").remove();
+                                    success: function () {
+                                        table.row(button.parents("tr")).remove().draw();
+                                        //row(),remove() and draw() are data table api methods
                                     }
                                 });
                             }
