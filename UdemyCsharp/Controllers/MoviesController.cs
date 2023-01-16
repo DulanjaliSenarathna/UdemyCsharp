@@ -22,6 +22,7 @@ using UdemyCsharp.ViewModels;
             _context.Dispose();
         }
 
+        [Authorize(Roles = RoleName.CanManageMovie)]
         public ViewResult New()
         {
             var genres = _context.Genres.ToList();
@@ -36,7 +37,9 @@ using UdemyCsharp.ViewModels;
         public ViewResult Index()
         {
             //var movies = _context.Movies.Include(m => m.Genre).ToList();
-            return View();    
+            if (User.IsInRole(RoleName.CanManageMovie))
+                return View("List");
+            return View("ReadOnlyList");
         }
 
         public ActionResult Details(int id)
@@ -63,6 +66,7 @@ using UdemyCsharp.ViewModels;
             return View(viewModel);
         }
 
+        [Authorize(Roles = RoleName.CanManageMovie)]
         public ActionResult Edit(int id)
         {
             var movie = _context.Movies.SingleOrDefault(c => c.Id == id);
@@ -79,6 +83,7 @@ using UdemyCsharp.ViewModels;
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = RoleName.CanManageMovie)]
         public ActionResult Save(Movie movie)
         {
             if (!ModelState.IsValid)

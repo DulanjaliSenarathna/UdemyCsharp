@@ -369,3 +369,4 @@ C:\Users\Dulanjali\Desktop\UdemyCsharp\UdemyCsharp\bin\System.Web.Http.WebHost.x
 C:\Users\Dulanjali\Desktop\UdemyCsharp\UdemyCsharp\bin\AutoMapper.dll
 C:\Users\Dulanjali\Desktop\UdemyCsharp\UdemyCsharp\bin\AutoMapper.xml
 C:\Users\Dulanjali\Desktop\UdemyCsharp\UdemyCsharp\obj\Debug\UdemyCsharp.Migrations.SeedUsers.resources
+C:\Users\Dulanjali\Desktop\UdemyCsharp\UdemyCsharp\obj\Debug\UdemyCsharp.Migrations.AddDrivingLicenseToApplicationUser.resources

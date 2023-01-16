@@ -21,6 +21,7 @@ namespace UdemyCsharp.Controllers.Api
         }
 
         //GET /api/movies
+        [Authorize(Roles = RoleName.CanManageMovie)]
         public IEnumerable<MovieDto> GetCustomers()
         {
             return _context.Movies.Include(m=>m.Genre).ToList().Select(Mapper.Map<Movie, MovieDto>);
@@ -52,6 +53,7 @@ namespace UdemyCsharp.Controllers.Api
 
         //PUT /api/movies/1
         [HttpPut]
+        [Authorize(Roles = RoleName.CanManageMovie)]
         public IHttpActionResult UpdateMovie(int id, MovieDto movieDto)
         {
             if (!ModelState.IsValid)
@@ -69,6 +71,7 @@ namespace UdemyCsharp.Controllers.Api
 
         //DELETE /api/movie/1
         [HttpDelete]
+        [Authorize(Roles = RoleName.CanManageMovie)]
         public IHttpActionResult DeleteMovie(int id)
         {
             var movieInDb = _context.Movies.SingleOrDefault(c => c.Id == id);
