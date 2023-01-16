@@ -54,9 +54,9 @@ namespace UdemyCsharp
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "720375806153187",
+               appSecret: "abe625daea4dbab7eaa86a38aa9b2924");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
